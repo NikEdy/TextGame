@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public string questionTitleToStartFrom;
+    public int startingIndex;
 
     public static GameManager instance;
 
@@ -14,6 +15,7 @@ public class GameManager : MonoBehaviour
 
     public List<Question> questions = new List<Question>();
 
+
     private void Awake()
     {
         instance = this;
@@ -21,8 +23,21 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        PlayQuestionByTitle(questionTitleToStartFrom);
+        //PlayQuestionByTitle(questionTitleToStartFrom);
+
+        PlayQuestionByIndex(startingIndex);
     }
+
+    public void PlayQuestionByIndex(int index)
+    {
+        Question question = questions[index];
+
+        if (question != null)
+        {
+            gameUI.PopulateUI(question);
+        }
+    }
+
 
     public void PlayQuestionByTitle(string title)
     {
@@ -33,6 +48,8 @@ public class GameManager : MonoBehaviour
             gameUI.PopulateUI(question);
         }
 
+
+
         //foreach (Question question in questions)
         //{
         //    if (question.questionTitle == title)
@@ -42,3 +59,5 @@ public class GameManager : MonoBehaviour
         //}
     }
 }
+
+
