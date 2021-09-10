@@ -232,7 +232,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8166575386c2dd4e9676af2f33ea6e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questionTitleToStartFrom: erwtisi 2
+  questionTitleToStartFrom: erwtisi 1
+  startingIndex: 0
   gameUI: {fileID: 368220499}
   answerBtnPrefab: {fileID: 8866927317288684566, guid: 98e4cc92293b4da43909220d3e8d7833, type: 3}
   questions:
